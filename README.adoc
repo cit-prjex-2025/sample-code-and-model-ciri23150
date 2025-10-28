@@ -1,4 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/k8LX84VP)
+
 :encoding: utf-8
 :lang: ja
 :scripts: cjk
@@ -295,23 +295,62 @@ image::traslation_rule_guide.png[{full-width}]
 
 .クラスの候補（下記リストを書き換える）
 * main_task
+* os
 * motor
-* クラス候補のモノA
-* クラス候補のモノB
+* touch_sensor
+* porter
+* carrier
+* wall_detector
+* bumper
+* ultrasonic_sensor
+* linemon
+* color_sensor
+* driver
+* tracer
 
 操作の候補（働き）の候補を列挙しなさい（候補でよい）。
 もし、クラスが決定できるなら、後のかっこ内に記載しておきなさい。
 
 .操作の候補（下記リストを書き換える）
 . set_poweer（motor）
-. 操作候補の働き1（クラス候補A）
-. 操作候補の働き2（クラス候補B）
+. stop（motor）
+. cargo_is_loaded（carrier）
+. is_pressed（touch_sensor）
+. is_detected（wall_detector）
+. get_distance（ultrasonic_sensor）
+. is_pushed（bumper）
+. is_online（linemon）
+. get_reflect（color_sensor）
+. turn_left（driver）
+. turn_right（driver）
+. stop（driver）
+. run（tracer）
+. stop（tracer）
+. transport（porter）
+. main_task（os）
+. ext_tsk（os）
+. motor_config（os）
+. sensor_config（os）
 
 関連の候補（クラス間のつながり）を下記に列挙しなさい（候補でよい）
 
 .関連の候補（下記リストを書き換える）
-. main_task -> transporter
-. クラス候補 -> クラス候補
+. os -> porter
+. os -> motor
+. os -> touch_sensor
+. main_task -> os
+. carrier -> touch_sensor
+. bumper -> touch_sensor 
+. wall_detector -> ultrasonic_sensor
+. linemon -> color_sensor
+. driver -> motor
+. porter -> tracer
+. porter -> linemon
+. porter -> carrier
+. porter -> wall_detector
+. porter -> bumper
+. tracer -> driver
+. tracer -> linemon
 
 ==== sample04のプロジェクトを作成する
 
